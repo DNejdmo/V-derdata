@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Väderdata.Models;
 
@@ -11,9 +12,11 @@ using Väderdata.Models;
 namespace Väderdata.Migrations
 {
     [DbContext(typeof(WDContext))]
-    partial class WDContextModelSnapshot : ModelSnapshot
+    [Migration("20241125123749_Update2")]
+    partial class Update2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,7 @@ namespace Väderdata.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("WeatherData", b =>
+            modelBuilder.Entity("Väderdata.Models.WeatherData", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

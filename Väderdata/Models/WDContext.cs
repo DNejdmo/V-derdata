@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Väderdata.Models;
+
 
 namespace Väderdata.Models;
 
@@ -16,5 +18,5 @@ public class WDContext : DbContext
         optionsBuilder.UseSqlServer(connectionString);
     }
 
-    DbSet<WeatherData> WeatherData { get; set; }
+    public DbSet<WeatherData> WeatherData { get; set; }
 }
